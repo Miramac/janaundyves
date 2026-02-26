@@ -18,11 +18,12 @@
 }
 
 /* ── Hintergrund ── */
-html, body {
+html {
   min-height: 100%;
 }
 
 body {
+  min-height: 100vh;
   background: linear-gradient(
     135deg,
     var(--pink-light)  0%,
@@ -35,52 +36,11 @@ body {
   font-weight: 300;
   color: var(--text-main);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ── Schwebende Blüten ── */
-.petals {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.petals span {
-  position: absolute;
-  top: -60px;
-  font-size: 1.4rem;
-  opacity: 0;
-  animation: fall linear infinite;
-  user-select: none;
-}
-
-.petals span:nth-child(1)  { left:  5%; animation-duration: 12s; animation-delay:  0s; font-size: 1.2rem; }
-.petals span:nth-child(2)  { left: 12%; animation-duration: 16s; animation-delay:  2s; }
-.petals span:nth-child(3)  { left: 22%; animation-duration: 10s; animation-delay:  5s; font-size: 1rem;  }
-.petals span:nth-child(4)  { left: 33%; animation-duration: 14s; animation-delay:  1s; }
-.petals span:nth-child(5)  { left: 43%; animation-duration: 18s; animation-delay:  3s; font-size: 1.6rem; }
-.petals span:nth-child(6)  { left: 55%; animation-duration: 11s; animation-delay:  7s; font-size: 0.9rem; }
-.petals span:nth-child(7)  { left: 63%; animation-duration: 15s; animation-delay:  0s; }
-.petals span:nth-child(8)  { left: 73%; animation-duration: 13s; animation-delay:  4s; }
-.petals span:nth-child(9)  { left: 82%; animation-duration: 17s; animation-delay:  6s; font-size: 1.1rem; }
-.petals span:nth-child(10) { left: 90%; animation-duration: 12s; animation-delay:  2s; font-size: 1.3rem; }
-.petals span:nth-child(11) { left: 48%; animation-duration: 19s; animation-delay:  9s; }
-.petals span:nth-child(12) { left: 18%; animation-duration:  9s; animation-delay: 11s; font-size: 0.8rem; }
-
-@keyframes fall {
-  0%   { transform: translateY(0)    rotate(0deg);   opacity: 0;   }
-  5%   {                                              opacity: 0.7; }
-  90%  {                                              opacity: 0.5; }
-  100% { transform: translateY(105vh) rotate(360deg); opacity: 0;   }
+  justify-content: center;
 }
 
 /* ── Layout ── */
 .container {
-  position: relative;
-  z-index: 1;
   max-width: 860px;
   width: 100%;
   padding: 3rem 1.5rem 4rem;
