@@ -81,17 +81,17 @@ h1 {
   letter-spacing: 0.03em;
 }
 
-/* ── Liedtext ── */
-.lyrics-section {
+/* ── Text-Abschnitt ── */
+.text-section {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  max-width: 480px;
+  max-width: 520px;
 }
 
-.lyrics-label {
+.section-label {
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.2em;
@@ -99,7 +99,7 @@ h1 {
   color: var(--accent);
 }
 
-.lyrics-text {
+.section-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
   font-style: italic;
