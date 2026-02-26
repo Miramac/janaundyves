@@ -5,193 +5,56 @@
 }
 
 :root {
-  --pink-light: #fde8f0;
-  --pink-mid:   #f5b8d0;
-  --pink-deep:  #e07a9f;
-  --mint:       #d4f0e8;
-  --lavender:   #ede0f7;
-  --cream:      #fffaf6;
-  --text-main:  #6b3a52;
-  --text-soft:  #a06080;
-  --gold:       #c9975a;
-  --radius:     16px;
+  --color-bg: #0f0f0f;
+  --color-surface: #1a1a1a;
+  --color-accent: #c8a96e;
+  --color-text: #f0f0f0;
+  --color-text-muted: #888;
+  --radius: 12px;
 }
 
-/* ── Hintergrund ── */
 html, body {
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    var(--pink-light)  0%,
-    var(--lavender)   35%,
-    var(--mint)       70%,
-    var(--pink-light) 100%
-  );
-  background-attachment: fixed;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  color: var(--text-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Georgia', serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
 }
 
-/* ── Schwebende Blüten ── */
-.petals {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.petals span {
-  position: absolute;
-  top: -60px;
-  font-size: 1.4rem;
-  opacity: 0;
-  animation: fall linear infinite;
-  user-select: none;
-}
-
-.petals span:nth-child(1)  { left:  5%; animation-duration: 12s; animation-delay:  0s; font-size: 1.2rem; }
-.petals span:nth-child(2)  { left: 12%; animation-duration: 16s; animation-delay:  2s; }
-.petals span:nth-child(3)  { left: 22%; animation-duration: 10s; animation-delay:  5s; font-size: 1rem;  }
-.petals span:nth-child(4)  { left: 33%; animation-duration: 14s; animation-delay:  1s; }
-.petals span:nth-child(5)  { left: 43%; animation-duration: 18s; animation-delay:  3s; font-size: 1.6rem; }
-.petals span:nth-child(6)  { left: 55%; animation-duration: 11s; animation-delay:  7s; font-size: 0.9rem; }
-.petals span:nth-child(7)  { left: 63%; animation-duration: 15s; animation-delay:  0s; }
-.petals span:nth-child(8)  { left: 73%; animation-duration: 13s; animation-delay:  4s; }
-.petals span:nth-child(9)  { left: 82%; animation-duration: 17s; animation-delay:  6s; font-size: 1.1rem; }
-.petals span:nth-child(10) { left: 90%; animation-duration: 12s; animation-delay:  2s; font-size: 1.3rem; }
-.petals span:nth-child(11) { left: 48%; animation-duration: 19s; animation-delay:  9s; }
-.petals span:nth-child(12) { left: 18%; animation-duration:  9s; animation-delay: 11s; font-size: 0.8rem; }
-
-@keyframes fall {
-  0%   { transform: translateY(0)    rotate(0deg);   opacity: 0;   }
-  5%   {                                              opacity: 0.7; }
-  90%  {                                              opacity: 0.5; }
-  100% { transform: translateY(105vh) rotate(360deg); opacity: 0;   }
-}
-
-/* ── Layout ── */
 .container {
-  position: relative;
-  z-index: 1;
-  max-width: 860px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
   width: 100%;
-  padding: 3rem 1.5rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
 }
 
-/* ── Header ── */
 header {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
+  margin-bottom: 2.5rem;
 }
 
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 700;
-  color: var(--text-main);
-  line-height: 1.1;
-  text-shadow: 0 2px 12px rgba(224, 122, 159, 0.25);
-}
-
-h1 .amp {
-  color: var(--pink-deep);
-}
-
-.subtitle {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  color: var(--text-soft);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-/* Dekorationslinie */
-.deco-line {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  width: min(320px, 90%);
-}
-
-.deco-dash {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--pink-mid), transparent);
-}
-
-.deco-flower {
-  color: var(--pink-deep);
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* ── Liedtext-Karte ── */
-.lyrics-section {
-  width: 100%;
-}
-
-.lyrics-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 184, 208, 0.5);
-  border-radius: var(--radius);
-  padding: 2rem 2.5rem;
-  text-align: center;
-  box-shadow:
-    0 4px 20px rgba(224, 122, 159, 0.12),
-    inset 0 1px 0 rgba(255,255,255,0.8);
-}
-
-.lyrics-label {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.2rem;
-  color: var(--pink-deep);
-  margin-bottom: 1rem;
+header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-accent);
   letter-spacing: 0.05em;
+  font-weight: normal;
 }
 
-.lyrics-text {
-  font-size: 1.05rem;
-  line-height: 2;
-  color: var(--text-soft);
-  font-style: italic;
-  letter-spacing: 0.02em;
-}
-
-/* ── Video ── */
+/* Video */
 .video-section {
   width: 100%;
 }
 
-.video-frame {
-  padding: 6px;
-  background: linear-gradient(135deg, var(--pink-mid), var(--lavender), var(--mint), var(--pink-mid));
-  border-radius: calc(var(--radius) + 6px);
-  box-shadow:
-    0 8px 40px rgba(224, 122, 159, 0.25),
-    0 2px 8px rgba(0,0,0,0.06);
-}
-
 .video-wrapper {
-  background: #1a1a1a;
+  background: var(--color-surface);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
   aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
@@ -202,24 +65,12 @@ video {
   width: 100%;
   height: 100%;
   display: block;
+  border-radius: var(--radius);
 }
 
-/* ── Footer ── */
-footer {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.2rem;
-  color: var(--text-soft);
-  letter-spacing: 0.05em;
-}
-
-/* ── Responsive ── */
+/* Responsive */
 @media (max-width: 600px) {
   .container {
-    padding: 2rem 1rem 3rem;
-    gap: 2rem;
-  }
-
-  .lyrics-card {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 }
