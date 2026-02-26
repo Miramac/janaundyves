@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jana & Yves</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Jana &amp; Yves</h1>
+    </header>
+
+    <section class="video-section">
+      <div class="video-wrapper">
+        <video
+          id="main-video"
+          controls
+          preload="metadata"
+          playsinline
+        >
+          <!--
+            Videodatei hier eintragen, z.B.:
+            <source src="/videos/meinvideo.mp4" type="video/mp4" />
+          -->
+          <source src="/videos/video.mp4" type="video/mp4" />
+          <p>Dein Browser unterstützt kein HTML5-Video.</p>
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

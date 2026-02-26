@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+
+# Videodateien werden nicht ins Git eingecheckt
+public/videos/*.mp4
+public/videos/*.mov
+public/videos/*.webm
